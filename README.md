@@ -19,4 +19,4 @@ Other sort requests work properly.
 
 Server side paging has been implemented since it is provided by endpoint. (Requesting all the data to client and doing pagination over data is not the proper way in this scenerio) You can customize page sizes with dropdown bottom as 10,20,50 default 20.
 
-Application is hosted on 
+Application is served under https://glacial-lake-66353.herokuapp.com
