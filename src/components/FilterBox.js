@@ -34,7 +34,7 @@ const styles = theme => ({
     },
     messageBox: {
         width: 200,
-    }
+    },
 });
 
 const sortList = [

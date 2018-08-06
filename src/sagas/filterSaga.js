@@ -57,8 +57,8 @@ function* requestGeoAutoComplete(action) {
             }
             const result = response.suggestions.map(item => {
                 return {
-                    label: item.value ? item.value._text : "",
-                    value: item.identifier ? item.identifier._text : "",
+                    label: item.value ? item.value : "",
+                    value: item.identifier ? item.identifier : "",
                 }
             });
 
@@ -100,16 +100,16 @@ function* requestListProperties(action) {
         } else {
             const listing = response.listing.map(item => {
                 return {
-                    'listingId': item.listing_id._text,
-                    'price': item.price._text,
-                    'bedrooms': item.num_bedrooms._text,
-                    'propertyType': item.property_type._text,
-                    'agentName': item.agent_name._text,
+                    'listingId': item.listing_id,
+                    'price': item.price,
+                    'bedrooms': item.num_bedrooms,
+                    'propertyType': item.property_type,
+                    'agentName': item.agent_name,
                 }
             });
             const result = {
-                areaName: response.area_name._text,
-                resultCount: parseInt(response.result_count._text, 10),
+                areaName: response.area_name,
+                resultCount: parseInt(response.result_count, 10),
                 data: listing
             };
             yield put(updatePropertiesTable(result));

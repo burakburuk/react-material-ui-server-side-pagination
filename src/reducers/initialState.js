@@ -15,10 +15,12 @@ const initialState = {
         minPriceError: false,
         minBeds: "",
         minBedsError: false,
-        isDisabled: false
+        isDisabled: false,
+        isLoading: false
     },
     resultTable: {
         isDisabled: false,
+        isLoading: false,
         data: List(),
         page: 0,
         rowsPerPage: 20,

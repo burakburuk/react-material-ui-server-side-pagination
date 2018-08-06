@@ -7,17 +7,17 @@ export const requestGeoAutoComplete = (event) => ({
 
 export const requestListPropertiesStart = (filter) => ({
     type: actionTypes.HANDLE_LIST_PROPERTIES_REQUEST,
-    filter, disabled: true
+    filter, disabled: true, isLoading: true
 });
 
 export const requestListPropertiesComplete = () => ({
     type: actionTypes.LIST_PROPERTIES_REQUEST_COMPLETE,
-    disabled: false
+    disabled: false, isLoading: false
 });
 
 export const updatePropertiesTable = (result) => ({
     type: actionTypes.UPDATE_PROPERTIES_TABLE,
-    ...result, isDisabled: true
+    ...result, isDisabled: true, isLoading: true
 });
 
 export const onFilterMinPriceFieldChange = (field) => ({
@@ -42,12 +42,12 @@ export const requestGeoAutoCompleteDone = (data) => ({
 
 export const handleChangeRowsPerPage = (event) => ({
     type: actionTypes.HANDLE_CHANGE_TABLE_ACTIONS,
-    rowsPerPage: event.target.value, isDisabled: true
+    rowsPerPage: event.target.value, isDisabled: true, isLoading: true
 });
 
 export const handleChangePage = (page) => ({
     type: actionTypes.HANDLE_CHANGE_TABLE_PAGE_ACTIONS,
-    page, isDisabled: true
+    page, isDisabled: true, isLoading: true
 });
 
 export const onLocationChange = (location) => ({
@@ -75,5 +75,5 @@ export const clearResultData = () => ({
 
 export const onSortByChange = (e) => ({
     type: actionTypes.HANDLE_CHANGE_SORT_ORDER_REQUEST,
-    sortBy: e.target.value
+    sortBy: e.target.value, isLoading: true
 });

@@ -17,11 +17,13 @@ export default function resultTableReducer(state = initialState, action) {
             return utils.pipe([
                 mutate.updateRowsPerPage(action.rowsPerPage),
                 mutate.updateIsDisabled(action.isDisabled),
+                mutate.updateIsLoading(action.isLoading),
             ], state);
         case actionTypes.HANDLE_CHANGE_TABLE_PAGE_ACTIONS:
             return utils.pipe([
                 mutate.updatePage(action.page),
                 mutate.updateIsDisabled(action.isDisabled),
+                mutate.updateIsLoading(action.isLoading),
             ], state);
         case actionTypes.CLEAR_RESULT_DATA:
             return utils.pipe([

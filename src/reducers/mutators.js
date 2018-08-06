@@ -16,6 +16,7 @@ export const updateAreaName = areaName => s => s.set('areaName', areaName);
 export const updateResultCount = resultCount => s => s.set('resultCount', resultCount);
 export const updateData = data => s => s.set('data', data);
 export const updateIsDisabled = isDisabled => s => s.set('isDisabled', isDisabled);
+export const updateIsLoading = isLoading => s => s.set('isLoading', isLoading);
 
 export const updateRowsPerPage = rowsPerPage => s => s.set('rowsPerPage', rowsPerPage);
 export const updatePage = page => s => s.set('page', page);

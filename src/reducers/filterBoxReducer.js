@@ -25,7 +25,10 @@ export default function filterBoxReducer(state = initialState, action) {
             ], state);
         case actionTypes.LIST_PROPERTIES_REQUEST_COMPLETE:
         case actionTypes.HANDLE_LIST_PROPERTIES_REQUEST:
-            return utils.pipe([mutate.updateIsDisabled(action.disabled)], state);
+            return utils.pipe([
+                mutate.updateIsDisabled(action.disabled),
+                mutate.updateIsLoading(action.isLoading),
+            ], state);
         case actionTypes.ON_MESSAGE_BOX_STATUS_CHANGE:
             return utils.pipe([mutate.updateMessageBoxOpen(action.isOpen)], state);
         case actionTypes.ON_LOCATION_FILTER_CHANGE:
@@ -33,7 +36,10 @@ export default function filterBoxReducer(state = initialState, action) {
         case actionTypes.GEO_AUTO_COMPLETE_REQUEST_DONE:
             return utils.pipe([mutate.updateSuggestions(fromJS(action.suggestions))], state);
         case actionTypes.HANDLE_CHANGE_SORT_ORDER_REQUEST:
-            return utils.pipe([mutate.updateSortBy(action.sortBy)], state);
+            return utils.pipe([
+                mutate.updateSortBy(action.sortBy),
+                mutate.updateIsLoading(action.isLoading),
+            ], state);
         case actionTypes.ON_LOCATION_FILTER_SET:
             return utils.pipe([
                 mutate.updateSelectedLocation(action.selectedLocation),
