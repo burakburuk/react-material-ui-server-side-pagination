@@ -1,4 +1,4 @@
-# plentific-frontend
+# React Material UI Server Side Pagination
 A single-page app using React.js and the Zoopla API with auto complete, server side pagination and sorting features. 
 
 In order to run project, run following commands npm install npm run start
